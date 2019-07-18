@@ -1,0 +1,72 @@
+/*style in the whole document*/
+body {
+	background-image: url('./img/image2.jpg'); 
+	background-color: #B4A960;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: normal;
+	margin: 3px;
+	padding: 0px;
+	text-align: center;
+	font-family: "Courier New", Helvetica,sans-serif;
+}
+
+/*Styling the info div*/
+
+div.info {
+	font-size: 1rem;
+	color: white;
+	background-color: rgba(7.8, 12.5, 20.8, 0.3);
+	margin: 0px;
+	padding: 0px;
+}
+div > h2 {
+	font-size: 1rem;
+}
+
+/*Styling the form div*/
+
+div.form {
+	color: #033368;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: rgba(171,176,181, 0.4);
+	margin: auto;
+	letter-spacing: 2px;
+	
+}
+p.passenger {
+	font-size: 1.4rem;
+}
+
+div.flexbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	padding-left: 35%;
+}
+div.smallerbox {
+	text-align: left;
+	padding: 2px;
+	
+
+}
+
+
+
+/*Styling the completed div at the bottom*/
+
+div.completed {
+	color: white;
+
+} 
+div > h4 {
+	font-weight: 900;
+	text-decoration: underline;
+}
+p.passenger {
+	color: #033368;
+}
