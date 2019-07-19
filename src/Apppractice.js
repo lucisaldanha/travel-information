@@ -48,30 +48,11 @@ class Apppractice extends Component {
 	}
 
 	render() {
-		let arr = [ 
-			this.state.dietaryRestriction.vegetarian, 
-			this.state.dietaryRestriction.kosher, 
-			this.state.dietaryRestriction.lactoseFree,
-			this.state.dietaryRestriction.vegan
-		];
-		let [veg, kos, lact, ven] = arr;
-		let veggie;
-		let kosh;
-		let lacto;
-		let vega;
-		if(veg) {
-			veggie = 'Vegetarian';
-		}
-		if(kos) {
-			kosh = 'Kosher';
-		}
-		if(lact) {
-			lacto = 'Lactose Free';
-		}
-		if(ven) {
-			vega = 'Vegan';
-		}
-
+		let veggie = this.state.dietaryRestriction.vegetarian ? 'Vegetarian': null;
+		let kosh = this.state.dietaryRestriction.kosher ? 'Kosher': null;
+		let lacto = this.state.dietaryRestriction.lactoseFree ? 'Lactose Free': null;
+		let vega = this.state.dietaryRestriction.vegan ? 'Vegan': null;
+		
 		let edad = this.state.age;
 		let textAge = edad >= 1 ? (edad + ' years old') : null;
 
@@ -121,6 +102,7 @@ class Apppractice extends Component {
 									placeholder='Age' 
 									name='age' 
 									onChange={this.handleChange}
+									required
 								/>
 								<br /><br />
 							</label>
@@ -156,7 +138,7 @@ class Apppractice extends Component {
 								</div>
 							</label>
 							<label>Please select destination: <br />
-								<select value={this.state.destination} name='destination' onChange={this.handleChange}>
+								<select value={this.state.destination} name='destination' onChange={this.handleChange} required>
 									<option value=''> - Please select a destination</option>
 									<option value='Montreal - Canada'>Montreal - Canada</option>
 									<option value='Rio de Janeiro - Brazil'>Rio de Janeiro - Brazil</option>
