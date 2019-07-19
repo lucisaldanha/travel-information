@@ -11,10 +11,12 @@ class Apppractice extends Component {
 			age: '',
 			gender: '',
 			destination: '',
-			vegetarian: false,
-			kosher: false,
-			lactoseFree: false,
-			vegan: false
+			dietaryRestriction: {	
+				vegetarian: false,
+				kosher: false, 
+				lactoseFree: false,
+				vegan: false
+			}
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +24,13 @@ class Apppractice extends Component {
 
 	handleChange(event) {
 		const { name, value, type, checked } = event.target;
-		type === 'checkbox' ? this.setState({[name]: checked}) : this.setState({ [name]: value });
+		type === 'checkbox' ? 
+			this.setState({
+				dietaryRestriction: {
+					[name]: checked
+				}
+			}) : this.setState({ [name]: value });
+		
 	}
 
 	handleSubmit(event) {
@@ -32,16 +40,16 @@ class Apppractice extends Component {
 		Age: ${this.state.age}
 		Gender: ${this.state.gender}
 		Destination: ${this.state.destination}
-		Dietary Restrictions:\n ${(this.state.vegetarian)? 'Vegetarian' : ''}\n ${this.state.kosher ? 'Kosher' : null}\n ${this.state.lactoseFree ? 'Lactose Free' : null}\n ${this.state.vegan ? 'Vegan' : null}
+		Dietary Restrictions:\n ${(this.state.dietaryRestriction.vegetarian)? 'Vegetarian' : ''}\n ${this.state.dietaryRestriction.kosher ? 'Kosher' : null}\n ${this.state.dietaryRestriction.lactoseFree ? 'Lactose Free' : null}\n ${this.state.dietaryRestriction.vegan ? 'Vegan' : null}
 		` );
 	}
 
 	render() {
 		let arr = [ 
-			this.state.vegetarian, 
-			this.state.kosher, 
-			this.state.lactoseFree,
-			this.state.vegan
+			this.state.dietaryRestriction.vegetarian, 
+			this.state.dietaryRestriction.kosher, 
+			this.state.dietaryRestriction.lactoseFree,
+			this.state.dietaryRestriction.vegan
 		];
 		let [veg, kos, lact, ven] = arr;
 		let veggie;
@@ -150,25 +158,25 @@ class Apppractice extends Component {
 							<label>Dietary restriction(s):<br />
 								<input type='checkbox' 
 									name='vegetarian' 
-									checked={this.state.vegetarian} 
+									checked={this.state.dietaryRestriction.vegetarian} 
 									onChange={this.handleChange} 
 								/>Vegetarian
 								<input 
 									type='checkbox' 
 									name='kosher' 
-									checked={this.state.kosher} 
+									checked={this.state.dietaryRestriction.kosher} 
 									onChange={this.handleChange} 
 								/>Kosher
 								<input 
 									type='checkbox' 
 									name='lactoseFree' 
-									checked={this.state.lactoseFree} 
+									checked={this.state.dietaryRestriction.lactoseFree} 
 									onChange={this.handleChange} 
 								/>Lactose Free
 								<input 
 									type='checkbox' 
 									name='vegan' 
-									checked={this.state.vegan} 
+									checked={this.state.dietaryRestriction.vegan} 
 									onChange={this.handleChange} 
 								/>Vegan
 							</label>
