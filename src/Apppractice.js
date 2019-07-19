@@ -32,8 +32,10 @@ class Apppractice extends Component {
 						[name]: checked
 					}
 				}
-			}) : this.setState({ [name]: value });
-
+			}) : 
+			this.setState({ 
+				[name]: value 
+			})
 	}
 
 	handleSubmit(event) {
@@ -139,7 +141,7 @@ class Apppractice extends Component {
 							</label>
 							<label>Please select destination: <br />
 								<select value={this.state.destination} name='destination' onChange={this.handleChange} required>
-									<option value=''> - Please select a destination</option>
+									<option value=''> - Please select a destination -</option>
 									<option value='Montreal - Canada'>Montreal - Canada</option>
 									<option value='Rio de Janeiro - Brazil'>Rio de Janeiro - Brazil</option>
 									<option value='Tokyo - Japan'>Tokyo - Japan</option>
