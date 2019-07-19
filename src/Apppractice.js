@@ -25,12 +25,15 @@ class Apppractice extends Component {
 	handleChange(event) {
 		const { name, value, type, checked } = event.target;
 		type === 'checkbox' ? 
-			this.setState({
-				dietaryRestriction: {
-					[name]: checked
+			this.setState(prevState => {
+				return {
+					dietaryRestriction: {
+						...prevState.dietaryRestriction,
+						[name]: checked
+					}
 				}
 			}) : this.setState({ [name]: value });
-		
+
 	}
 
 	handleSubmit(event) {
@@ -71,6 +74,14 @@ class Apppractice extends Component {
 
 		let edad = this.state.age;
 		let textAge = edad >= 1 ? (edad + ' years old') : null;
+
+		const styled = {
+			color:'white',
+			backgroundColor: 'rgba(171,176,181, 0.4)', 
+			fontWeight: 700, 
+			textTransform:'uppercase', 
+			borderRadius:'2px'
+		}
 
 		return (
 			<main>
@@ -188,11 +199,11 @@ class Apppractice extends Component {
 				<hr />
 				<div className='completed'>
 					<h4>The information you are going to submit:</h4>
-					<p>Your name: <span style={{color:'white',backgroundColor: 'rgba(171,176,181, 0.4)', fontWeight: 700, textTransform:'uppercase', borderRadius:'2px'}}>{this.state.firstName} {this.state.lastName}</span></p>
-					<p>Age: <span style={{color:'white',backgroundColor: 'rgba(171,176,181, 0.4)', fontWeight: 700, textTransform:'uppercase', borderRadius:'2px'}}>{textAge}</span></p>
-					<p>Gender: <span style={{color:'white',backgroundColor: 'rgba(171,176,181, 0.4)', fontWeight: 700, textTransform:'uppercase', borderRadius:'2px'}}>{this.state.gender}</span></p>
-					<p>Destination: <span style={{color:'white',backgroundColor: 'rgba(171,176,181, 0.4)', fontWeight: 700, textTransform:'uppercase', borderRadius:'2px'}}>{this.state.destination}</span></p>
-					<p>Dietary restriction(s): <span style={{color:'white',backgroundColor: 'rgba(171,176,181, 0.4)', fontWeight: 700, textTransform:'uppercase', borderRadius:'2px'}}>{veggie} {kosh} {lacto} {vega}</span> </p>
+					<p>Your name: <span style={styled}>{this.state.firstName} {this.state.lastName}</span></p>
+					<p>Age: <span style={styled}>{textAge}</span></p>
+					<p>Gender: <span style={styled}>{this.state.gender}</span></p>
+					<p>Destination: <span style={styled}>{this.state.destination}</span></p>
+					<p>Dietary restriction(s): <span style={styled}>{veggie} {kosh} {lacto} {vega}</span> </p>
 				</div>
 			</main>
 		)
