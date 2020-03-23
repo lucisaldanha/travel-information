@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import FormComponent from './FormComponent';
+import FormComponent from '../components/FormComponent';
 
-import FormCompleted from './FormCompleted';
+import FormCompleted from '../components/FormCompleted';
 
-import FormHeader from './FormHeader';
+import FormHeader from '../components/FormHeader';
 
-import './style.css';
+import '../style.css';
 
 class FormContainer extends Component {
 	constructor(props){
