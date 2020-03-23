@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import App from './App';
-import Apppractice from './Apppractice';
+import FormContainer from './containers/FormContainer.js';
 
-ReactDOM.render(<Apppractice />, document.getElementById('root'));
+ReactDOM.render(<FormContainer />, document.getElementById('root'));

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './img/image4.jpg';
+import '../img/image4.jpg';
 
 function FormComponent(props) {
 	return (
