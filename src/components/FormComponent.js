@@ -6,9 +6,9 @@ function FormComponent(props) {
 	return (
 		<main>
 			<div className='form' >
-				<form onSubmit={props.handleSubmit} >
+				<form  action ='/process' onSubmit={props.handleSubmit} method ='POST'>
 					<label><p className='passenger'>Passenger information</p>
-						<label>First Name:
+						<label for ='firstName'>First Name:
 							<input 
 								value={props.firstName}
 								type='text' 
@@ -18,7 +18,7 @@ function FormComponent(props) {
 							/>
 							<br />
 						</label>
-						<label>Last Name:
+						<label for ='lastName'>Last Name:
 							<input 
 								value={props.propslastName} 
 								type='text' 
@@ -28,7 +28,7 @@ function FormComponent(props) {
 							/>
 							<br />
 						</label>
-						<label>Age:
+						<label for ='age'>Age:
 							<input 
 								value={props.age}  
 								type='number' 
